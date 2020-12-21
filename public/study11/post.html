@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        table {
+            width: 80vw;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid rgb(196, 196, 196);
+        }
+        th {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>게시물 목록</h1>
+
+    <div>
+        <a href="form.html">작성하기</a>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>userId</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+
+            <tbody id="postBody">
+                <tr>
+                    <td>1</td>
+                    <td>abc</td>
+                    <td>제목입니당~</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>abc</td>
+                    <td>제목입니당~</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>abc</td>
+                    <td>제목입니당~</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>abc</td>
+                    <td>제목입니당~</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let _posts;
+        async function getPosts() {
+            const res = await fetch('/post');
+            _posts = await res.json();
+
+            console.log(_posts);
+            renderPosts();
+        }
+
+        // const getPosts = async () => {
+        //     const res = await fetch('/api/posts');
+        //     _posts = await res.json();
+
+        //     console.log(_posts);
+        // }
+
+        function renderPosts() {
+            const tbody = document.getElementById('postBody');
+            tbody.innerHTML = _posts.reduce((h, p) => h + `
+            <tr>
+                <td>${p.id}</td>
+                <td>${p.userId}</td>
+                <td>${p.title}</td>
+            </tr>`, '');
+        }
+        
+        //getPosts();
+
+    </script>
+</body>
+</html>

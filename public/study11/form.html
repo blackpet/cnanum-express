@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>작성하기</title>
+    <style>
+        textarea {
+            width: 80vw;
+            height: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>게시물 작성</h1>
+    <form name="writeForm" id="writeForm" method="POST" action="/post">
+        <ul>
+            <li>userId : <input type="text" name="userId"></li>
+            <li>title : <input type="text" name="title"></li>
+            <li>content : <textarea name="body"></textarea></li>
+        </ul>
+        <input type="submit" value="저장하기">
+    </form>
+
+    <script>
+        const frm = document.getElementById('writeForm');
+
+        frm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            // form submit 대신 ajax로 호출하자!
+            const param = {
+                userId: frm.userId.value,
+                title: frm.title.value,
+                body: frm.body.value
+            };
+            console.log('param', param);
+
+            const result = await fetch('/post', {
+                method: 'POST',
+                body: JSON.stringify(param), 
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await result.text();
+
+            console.log(data);
+            location.href = 'post.html';
+        });
+    </script>
+</body>
+</html>

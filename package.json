@@ -4,8 +4,11 @@
   "description": "cnanum study for node express",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blackpet/cnanum-express.git"
@@ -17,6 +20,10 @@
   },
   "homepage": "https://github.com/blackpet/cnanum-express#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

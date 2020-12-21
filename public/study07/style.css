@@ -1,0 +1,15 @@
+.w_list ol li {
+    display: flex;
+} 
+
+ol li button {
+    margin: 0px 10px 10px;
+}
+
+.com_list li {
+    display: flex;
+}
+
+.todo_list  li {
+    display: flex;
+}

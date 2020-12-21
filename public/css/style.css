@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.header .menu li,
+h1 {
+    text-transform: uppercase;
+}
+
+/* ########## header ########## */
+.header {
+    height: 100px;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    flex: 1 1;
+    padding-left: 20px;
+}
+
+.header .logo IMG {
+    height: 80px;
+    border-radius: 20px;
+}
+
+.header .menu {
+    flex: 2 2;
+}
+.header .menu ul {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.header .menu li {
+    flex: 1;
+}
+
+/* ############# intro ########### */
+.study-03 .intro {
+    display: flex;
+}
+.study-03 .intro .item {
+    flex: 1;
+    margin: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+    padding: 20px;
+}
+.study-03 .item h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.study-03 .intro .item img {
+    width: 100%;
+}
+
+.study-03 h1 {
+    margin: 50px 0 20px;
+    text-align: center;
+}
+
+/* ####### notice ######## */
+.study-03 .notice li {
+    display: flex;
+    line-height: 2rem;
+}
+
+.study-03 .notice li .title {
+    flex: 1 1 80%;
+    padding-left: 20px;
+}
+
+.study-03 .notice li .date {
+    flex: 1 1 20%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* ###### staff ######### */
+.study-03 .staff ul {
+    display: flex;
+    justify-content: space-between;
+}
+.study-03 .staff li {
+    flex: 1;
+    text-align: center;
+}
+.study-03 .staff img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+/* ####### footer ########## */
+.footer {
+    margin-top: 50px;
+    padding-top: 50px;
+    height: 150px;
+    background-color: black;
+    color: #CECECE;
+}
