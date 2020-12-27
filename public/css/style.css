@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
+
 ul, ol {
     list-style: none;
 }
@@ -33,14 +36,20 @@ h1 {
 
 .header .menu {
     flex: 2 2;
+    height: 60%;
 }
 .header .menu ul {
     display: flex;
     height: 100%;
     align-items: center;
+    justify-content: space-around;
 }
 .header .menu li {
     flex: 1;
+    text-align: center;
+}
+.header .menu li.active {
+    background-color: aqua;
 }
 
 /* ############# intro ########### */
@@ -106,4 +115,13 @@ h1 {
     height: 150px;
     background-color: black;
     color: #CECECE;
+}
+
+
+/* ####### board ######### */
+table {
+    border-collapse: collapse;
+}
+table td {
+    border: 1px solid rgb(182, 182, 182);
 }
